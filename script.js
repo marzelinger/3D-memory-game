@@ -35,7 +35,8 @@
         })
 var boxVars = []
 
-
+var lastClick = ""
+var lastBox = ""
 var box1 = document.getElementById("one")
 box1.addEventListener("click", function(){
     box1.setAttribute("shader", "gif")
@@ -44,9 +45,18 @@ box1.addEventListener("click", function(){
     setTimeout(function(){
         box1.emit('return')
         box1.setAttribute('src', "");
+        if(lastClick == gif["one"] && lastBox != box1){
+            box1.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box1.setAttribute('color', "tomato");
+        }
         box1.setAttribute("shader", "")
-    }, 3000);
+        lastClick = gif["one"]
+        lastBox = box1
+    }, 2000);
+
 })
 var box2 = document.getElementById("two")
 box2.addEventListener("click", function(){
@@ -56,9 +66,18 @@ box2.addEventListener("click", function(){
     setTimeout(function(){
         box2.emit('return')
         box2.setAttribute('src', "");
+        if(lastClick == gif["two"] && lastBox != box2){
+            box2.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box2.setAttribute('color', "tomato");
+        }
         box2.setAttribute("shader", "")
-    }, 3000);
+        lastClick = gif["two"]
+        lastBox = box2
+    }, 2000);
+
 })
 var box3 = document.getElementById("three")
 box3.addEventListener("click", function(){
@@ -68,9 +87,17 @@ box3.addEventListener("click", function(){
     setTimeout(function(){
         box3.emit('return')
         box3.setAttribute('src', "");
+        if(lastClick == gif["three"] && lastBox != box3){
+            box3.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box3.setAttribute('color', "tomato");
+        }
         box3.setAttribute("shader", "")
-    }, 3000);
+        lastClick = gif["three"]
+        lastBox = box3
+    }, 2000);
 })
 var box4 = document.getElementById("four")
 box4.addEventListener("click", function(){
@@ -80,9 +107,17 @@ box4.addEventListener("click", function(){
     setTimeout(function(){
         box4.emit('return')
         box4.setAttribute('src', "");
+        if(lastClick == gif["four"] && lastBox != box4){
+            box4.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box4.setAttribute('color', "tomato");
+        }
         box4.setAttribute("shader", "")
-    }, 3000);
+        lastClick = gif["four"]
+        lastBox = box4
+    }, 500);
 })
 var box5 = document.getElementById("five")
 box5.addEventListener("click", function(){
@@ -92,9 +127,17 @@ box5.addEventListener("click", function(){
     setTimeout(function(){
         box5.emit('return')
         box5.setAttribute('src', "");
+        if(lastClick == gif["five"] && lastBox != box5){
+            box5.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box5.setAttribute('color', "tomato");
+        }
         box5.setAttribute("shader", "")
-    }, 3000);
+        lastBox = box5
+        lastClick = gif["five"]
+    }, 2000);
 })
 var box6 = document.getElementById("six")
 box6.addEventListener("click", function(){
@@ -104,9 +147,17 @@ box6.addEventListener("click", function(){
     setTimeout(function(){
         box6.emit('return')
         box6.setAttribute('src', "");
+        if(lastClick == gif["six"] && lastBox != box6){
+            box6.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box6.setAttribute('color', "tomato");
+        }
         box6.setAttribute("shader", "")
-    }, 3000);
+        lastBox = box6
+        lastClick = gif["six"]
+    }, 2000);
 })
 var box7 = document.getElementById("seven")
 box7.addEventListener("click", function(){
@@ -116,9 +167,17 @@ box7.addEventListener("click", function(){
     setTimeout(function(){
         box7.emit('return')
         box7.setAttribute('src', "");
+        if(lastClick == gif["seven"] && lastBox != box7){
+            box7.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box7.setAttribute('color', "tomato");
+        }
         box7.setAttribute("shader", "")
-    }, 3000);
+        lastBox = box7
+        lastClick= gif["seven"]
+    }, 2000);
 })
 var box8 = document.getElementById("eight")
 box8.addEventListener("click", function(){
@@ -128,9 +187,17 @@ box8.addEventListener("click", function(){
     setTimeout(function(){
         box8.emit('return')
         box8.setAttribute('src', "");
+        if(lastClick == gif["eight"] && lastBox != box8){
+            box8.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box8.setAttribute('color', "tomato");
+        }
         box8.setAttribute("shader", "")
-    }, 3000);
+        lastBox = box8
+        lastClick= gif["eight"]
+    }, 2000);
 })
 var box9 = document.getElementById("nine")
 box9.addEventListener("click", function(){
@@ -140,9 +207,17 @@ box9.addEventListener("click", function(){
     setTimeout(function(){
         box9.emit('return')
         box9.setAttribute('src', "");
+        if(lastClick == gif["nine"] && lastBox != box9){
+            box9.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box9.setAttribute('color', "tomato");
+        }
         box9.setAttribute("shader", "")
-    }, 3000);
+        lastBox = box9
+        lastClick= gif["nine"]
+    }, 2000);
 })
 var box10 = document.getElementById("ten")
 box10.addEventListener("click", function(){
@@ -152,9 +227,17 @@ box10.addEventListener("click", function(){
     setTimeout(function(){
         box10.emit('return')
         box10.setAttribute('src', "");
+        if(lastClick == gif["ten"] && lastBox != box10){
+            box10.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box10.setAttribute('color', "tomato");
+        }
         box10.setAttribute("shader", "")
-    }, 3000);
+        lastBox = box10
+        lastClick = gif["ten"]
+    }, 2000);
 })
 var box11 = document.getElementById("eleven")
 box11.addEventListener("click", function(){
@@ -164,9 +247,17 @@ box11.addEventListener("click", function(){
     setTimeout(function(){
         box11.emit('return')
         box11.setAttribute('src', "");
+        if(lastClick == gif["eleven"] && lastBox != box11){
+            box11.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box11.setAttribute('color', "tomato");
+        }
         box11.setAttribute("shader", "")
-    }, 3000);
+        lastBox = box11
+        lastClick = gif["eleven"]
+    }, 2000);
 })
 var box12 = document.getElementById("twelve")
 box12.addEventListener("click", function(){
@@ -176,9 +267,17 @@ box12.addEventListener("click", function(){
     setTimeout(function(){
         box12.emit('return')
         box12.setAttribute('src', "");
+        if(lastClick == gif["twelve"] && lastBox != box12){
+            box12.setAttribute('color', "green");
+            lastBox.setAttribute('color', "green")
+        }
+        else{
         box12.setAttribute('color', "tomato");
+        }
         box12.setAttribute("shader", "")
-    }, 3000);
+        lastBox = box12
+        lastClick = gif["twelve"]
+    }, 2000);
 })
 
 
