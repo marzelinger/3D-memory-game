@@ -1,10 +1,15 @@
 <html>
   <head>
+    <link rel = "stylesheet" href = "style.css">
     <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
 </head>
   </head>
   <body>
+      <div class = "input">
+      <input id = "userInput" type = "text">
+      <button id = "button" onclick = "startGame()" type = "submit">Submit</button>
+      </div>
     <a-scene>
         <a-assets id = "assets">
 
