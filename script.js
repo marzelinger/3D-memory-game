@@ -1,10 +1,10 @@
-        
-    function startGame(){
+function startGame(){
         var boxes = ["one", "two" ,"three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven", "twelve"]
         var originalboxes = boxes;
         var gif = {}
         document.getElementById("button").style.display = "none"
         document.getElementById("userInput").style.display= "none"
+        document.getElementById("scene").setAttribute("visible", true)
         var searchTerm = document.getElementById("userInput").value;
         fetch("https://api.giphy.com/v1/gifs/search?q="+ searchTerm + "&api_key=dfb264acffa3492f819190272fefc95d&limit=9")
             .then(function(data) {
@@ -54,12 +54,10 @@
 
                 gif[boxId] = "#gif" + j
                 gif[boxId2] = "#gif" + j
-
             }
-            
         })
 var boxVars = []
-
+var points = 0
 var lastClick = ""
 var lastBox = ""
 var box1 = document.getElementById("one")
@@ -71,6 +69,13 @@ box1.addEventListener("click", function(){
         box1.emit('return')
         box1.setAttribute('src', "");
         if(lastClick == gif["one"] && lastBox != box1){
+            if(box1.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6 ){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box1.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -92,6 +97,13 @@ box2.addEventListener("click", function(){
         box2.emit('return')
         box2.setAttribute('src', "");
         if(lastClick == gif["two"] && lastBox != box2){
+            if(box2.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6 ){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box2.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -113,6 +125,13 @@ box3.addEventListener("click", function(){
         box3.emit('return')
         box3.setAttribute('src', "");
         if(lastClick == gif["three"] && lastBox != box3){
+            if(box3.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box3.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -133,6 +152,13 @@ box4.addEventListener("click", function(){
         box4.emit('return')
         box4.setAttribute('src', "");
         if(lastClick == gif["four"] && lastBox != box4){
+            if(box4.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box4.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -153,6 +179,13 @@ box5.addEventListener("click", function(){
         box5.emit('return')
         box5.setAttribute('src', "");
         if(lastClick == gif["five"] && lastBox != box5){
+            if(box5.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box5.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -173,6 +206,13 @@ box6.addEventListener("click", function(){
         box6.emit('return')
         box6.setAttribute('src', "");
         if(lastClick == gif["six"] && lastBox != box6){
+            if(box6.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box6.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -193,6 +233,13 @@ box7.addEventListener("click", function(){
         box7.emit('return')
         box7.setAttribute('src', "");
         if(lastClick == gif["seven"] && lastBox != box7){
+            if(box7.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box7.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -213,6 +260,13 @@ box8.addEventListener("click", function(){
         box8.emit('return')
         box8.setAttribute('src', "");
         if(lastClick == gif["eight"] && lastBox != box8){
+            if(box8.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box8.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -233,6 +287,13 @@ box9.addEventListener("click", function(){
         box9.emit('return')
         box9.setAttribute('src', "");
         if(lastClick == gif["nine"] && lastBox != box9){
+            if(box9.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box9.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -253,6 +314,13 @@ box10.addEventListener("click", function(){
         box10.emit('return')
         box10.setAttribute('src', "");
         if(lastClick == gif["ten"] && lastBox != box10){
+            if(box10.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box10.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -273,6 +341,13 @@ box11.addEventListener("click", function(){
         box11.emit('return')
         box11.setAttribute('src', "");
         if(lastClick == gif["eleven"] && lastBox != box11){
+            if(box11.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box11.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -293,6 +368,13 @@ box12.addEventListener("click", function(){
         box12.emit('return')
         box12.setAttribute('src', "");
         if(lastClick == gif["twelve"] && lastBox != box12){
+            if(box12.getAttribute("color")!="green"){
+                points++
+                console.log(points)
+                if(points == 6){
+                    document.getElementById("win").setAttribute("visible", true)
+                }
+            }
             box12.setAttribute('color', "green");
             lastBox.setAttribute('color', "green")
         }
@@ -305,4 +387,23 @@ box12.addEventListener("click", function(){
     }, 2000);
 })
 
+}
+
+var spin = false
+var clicks = 0;
+function changeSpin(){
+    if(clicks == 0){
+        clicks++
+    }
+    if(clicks == 1){
+        spin = true;
+        clicks = 0;
+    }
+    
+}
+while(clicks == 0){
+    var cam = document.getElementById("cam")
+    var camRot = cam.getAttribute("rotation")
+    var newCamy = camRot.y + 3
+    cam.setAttribute("rotation",camRot.x + " " + newCamy + " " + camRot.z )
 }
