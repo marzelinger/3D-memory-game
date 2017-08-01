@@ -15,7 +15,7 @@
     <a-scene visible = false id = "scene">
         <a-assets id = "assets">
             <a-entity gearvr-controls></a-entity>
-            <!--<img id = "sky" src = "sky.png">-->
+            <img id = "sky" src = "sky.png">
             <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
             <a-mixin id="boldFont" text="font: #optimerBoldFont"></a-mixin>
         </a-assets>
@@ -70,7 +70,7 @@
             <a-animation attribute="rotation" begin="click" dur="500" to="0 360 0"></a-animation>
             <a-animation attribute ="rotation" begin = "return" dur = "500" to ="0 0 0"></a-animation>
         </a-box>
-    <!--<a-sky src = "#sky"></a-sky>-->
+    <a-sky src = "#sky"></a-sky>
     <a-camera>
         <a-cursor> </a-cursor>
     </a-camera>
