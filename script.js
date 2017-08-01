@@ -6,7 +6,7 @@ function startGame(){
         document.getElementById("userInput").style.display= "none"
         document.getElementById("scene").setAttribute("visible", true)
         var searchTerm = document.getElementById("userInput").value;
-        fetch("https://api.giphy.com/v1/gifs/search?q="+ searchTerm + "&api_key=dfb264acffa3492f819190272fefc95d&limit=9")
+        fetch("https://api.giphy.com/v1/gifs/search?q="+ searchTerm + "&api_key=dfb264acffa3492f819190272fefc95d&limit=9&rating=pg")
             .then(function(data) {
                 return data.json()
             })
