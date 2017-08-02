@@ -1,3 +1,5 @@
+var began = false
+
 function startGame(){
         var boxes = ["one", "two" ,"three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven", "twelve"]
         var originalboxes = boxes;
@@ -66,6 +68,10 @@ var lastBox = ""
 for(var i = 1; i < 13;i++){
     boxVars[i-1] = document.getElementById(originalboxes[i-1])
     boxVars[i-1].addEventListener("click", function(){
+        if(!began){
+            countdown()
+            began = true
+        }
         this.setAttribute("shader", "gif")
         this.setAttribute('src', gif[this.getAttribute("id")])
         this.setAttribute('color', "")
@@ -78,7 +84,7 @@ for(var i = 1; i < 13;i++){
                         points++
                         console.log(points)
                         if(points == 6 ){
-                            document.getElementById("win").setAttribute("visible", true)
+                            stop("win")
                         }
                     }
                     currBox.setAttribute('color', "green");
@@ -94,4 +100,25 @@ for(var i = 1; i < 13;i++){
     })
     
 }
+}
+var timer;
+function countdown(){
+    console.log("in countdown")
+    timer = setInterval(function(){
+        
+      var timeEl = document.getElementById("time")
+      var currt = Number(timeEl.getAttribute("value"))
+      console.log(currt)
+      currt = currt-1
+      timeEl.setAttribute("value", currt)
+        if(currt==0){
+          stop("lose")
+      }
+    },1000)
+
+}
+function stop(game){
+    clearInterval(timer)
+    document.getElementById("time").setAttribute("visible", "false")
+    document.getElementById(game).setAttribute("visible", true)
 }
