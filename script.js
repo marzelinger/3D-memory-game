@@ -1,4 +1,39 @@
 var began = false
+var gameOver = false;
+
+function reset(){
+    resetBoard()
+    startGame();
+}
+
+function goHome(){
+    reset();
+    document.getElementById("input").style.display = "inline-block"
+    document.getElementById("button").style.display = "inline-block"
+    document.getElementById("userInput").style.display= "inline-block"
+    document.getElementById("scene").setAttribute("visible", false)
+    
+}
+
+function resetBoard(){
+    began = false
+    gameOver = false;
+    document.getElementById("cam").emit("startOver");
+    document.getElementById("time").setAttribute("visible", "false")
+    document.getElementById("time").setAttribute("value", "10");
+    var resetboxes = ["one", "two" ,"three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven", "twelve"]
+    for(var i = 0; i < resetboxes.length; i ++){
+        document.getElementById(resetboxes[i]).setAttribute("color", "tomato")
+        //document.getElementById(resetboxes[i]).removeEventListener("click");
+        var old_element = document.getElementById(resetboxes[i]);
+        var new_element = old_element.cloneNode(true);
+        old_element.parentNode.replaceChild(new_element, old_element);
+    }
+    document.getElementById("win").setAttribute("visible", false)
+    document.getElementById("lose").setAttribute("visible", false)
+    document.getElementById("gameOver").setAttribute("visible", false)
+
+}
 
 function startGame(){
         var boxes = ["one", "two" ,"three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven", "twelve"]
@@ -68,6 +103,8 @@ var lastBox = ""
 for(var i = 1; i < 13;i++){
     boxVars[i-1] = document.getElementById(originalboxes[i-1])
     boxVars[i-1].addEventListener("click", function(){
+        if(!gameOver){
+            console.log("here")
         if(!began){
             countdown()
             began = true
@@ -97,7 +134,7 @@ for(var i = 1; i < 13;i++){
                 lastClick = gif[currBox.getAttribute("id")]
                 lastBox = currBox
         }, 2000);
-    })
+    }})
     
 }
 }
@@ -119,6 +156,9 @@ function countdown(){
 }
 function stop(game){
     clearInterval(timer)
+    gameOver = true;
     document.getElementById("time").setAttribute("visible", "false")
     document.getElementById(game).setAttribute("visible", true)
+    document.getElementById("cam").emit("end")
+    document.getElementById("gameOver").setAttribute("visible", true)
 }
