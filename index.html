@@ -23,7 +23,7 @@
         </a-assets>
         <a-entity id = "win" visible = "false" position = "-3 2 -5" scale = "2" text-geometry="value: You won!; font: #optimerBoldFont"></a-entity>
          <a-entity id = "lose" visible = "false" position = "-3 2 -5" scale = "2" text-geometry="value: You Lost....; font: #optimerBoldFont"></a-entity>
-        <a-text id="time" position="-0.2 1.85 -2" scale="1.5 1.5 1.5" value="5" color="red"></a-text>
+        <a-text id="time" position="-0.2 1.85 -2" scale="1.5 1.5 1.5" value="40" color="red"></a-text>
         <a-box color = "tomato" id = "one" depth="4" height="4" width="4" position = "-12 8 -20">
             <a-animation attribute="rotation" begin="click" dur="500" to="0 360 0"></a-animation>
             <a-animation attribute ="rotation" begin = "return" dur = "500" to ="0 0 0"></a-animation>
@@ -88,7 +88,7 @@
     <a-camera id = "cam">
         <a-cursor color = "white"> </a-cursor>
         <a-animation attribute = "position" to = "0 0 8" dur = "3000" begin = "end"></a-animation>
-        <a-animation attribute = "position" to = "0 0 0" dur = "3000" begin = "startOver"></a-animation>
+        <a-animation attribute = "position" to = "0 0 1" dur = "3000" begin = "startOver"></a-animation>
     </a-camera>
     </a-scene>
     <script src = "script.js"></script>

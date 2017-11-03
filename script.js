@@ -19,8 +19,8 @@ function resetBoard(){
     began = false
     gameOver = false;
     document.getElementById("cam").emit("startOver");
-    document.getElementById("time").setAttribute("visible", "false")
-    document.getElementById("time").setAttribute("value", "10");
+    document.getElementById("time").setAttribute("visible", "true")
+    document.getElementById("time").setAttribute("value", "40");
     var resetboxes = ["one", "two" ,"three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven", "twelve"]
     for(var i = 0; i < resetboxes.length; i ++){
         document.getElementById(resetboxes[i]).setAttribute("color", "tomato")
