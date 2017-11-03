@@ -1,17 +1,17 @@
 var began = false
 var gameOver = false;
-
+var gamenum = 0;
 function reset(){
     resetBoard()
     startGame();
 }
 
 function goHome(){
-    reset();
-    document.getElementById("input").style.display = "inline-block"
+    resetBoard();
+    document.getElementById("input").style.display = "block"
     document.getElementById("button").style.display = "inline-block"
     document.getElementById("userInput").style.display= "inline-block"
-    document.getElementById("scene").setAttribute("visible", false)
+    //document.getElementById("scene").setAttribute("visible", false)
     
 }
 
@@ -32,10 +32,10 @@ function resetBoard(){
     document.getElementById("win").setAttribute("visible", false)
     document.getElementById("lose").setAttribute("visible", false)
     document.getElementById("gameOver").setAttribute("visible", false)
-
 }
 
 function startGame(){
+    gamenum++;
         var boxes = ["one", "two" ,"three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven", "twelve"]
         var originalboxes = boxes;
         var gif = {}
@@ -44,20 +44,21 @@ function startGame(){
         document.getElementById("userInput").style.display= "none"
         document.getElementById("scene").setAttribute("visible", true)
         var searchTerm = document.getElementById("userInput").value;
+        console.log(searchTerm)
         fetch("https://api.giphy.com/v1/gifs/search?q="+ searchTerm + "&api_key=dfb264acffa3492f819190272fefc95d&limit=9&rating=pg")
             .then(function(data) {
                 return data.json()
             })
         .then(function(json) {
-            console.log(json.data)
+            //console.log(json.data)
             var data=[]
             var a = Math.floor(Math.random()*(json.data.length-1))
             data.push(json.data[a])
-            console.log(json.data[a])
+            //console.log(json.data[a])
             json.data.splice(a, 1)
             var b = Math.floor(Math.random()*(json.data.length-1))
             data.push(json.data[b])
-            console.log(json.data[b])
+            //console.log(json.data[b])
             json.data.splice(b, 1)
             var c = Math.floor(Math.random()*(json.data.length-1))
             data.push(json.data[c])
@@ -71,17 +72,16 @@ function startGame(){
             var f = Math.floor(Math.random()*(json.data.length-1))
             data.push(json.data[f])
             json.data.splice(f, 1)
-            console.log(data)
+            //console.log(data)
             var images = []
             var boxVars
             for(var j = 0; j < data.length; j++){
                 images.push(data[j].images.fixed_height.url)
                 var newimg = document.createElement("img")
                 newimg.setAttribute("src", data[j].images.fixed_height.url)
-                newimg.setAttribute("id", "gif" + j)
+                newimg.setAttribute("id", "gif" + j + "" + gamenum)
                 document.getElementById("assets").appendChild(newimg)
                 // console.log(document.getElementById("assets"))
-
                 var element = Math.floor(Math.random()*(boxes.length-1))
                 var boxId = boxes[element]
                 boxes.splice(element,1)
@@ -90,8 +90,8 @@ function startGame(){
                 boxes.splice(element2,1)
                 
 
-                gif[boxId] = "#gif" + j
-                gif[boxId2] = "#gif" + j
+                gif[boxId] = "#gif" + j + "" + gamenum
+                gif[boxId2] = "#gif" + j + "" + gamenum
             }
         })
 
@@ -109,6 +109,7 @@ for(var i = 1; i < 13;i++){
             countdown()
             began = true
         }
+        console.log(gif);
         this.setAttribute("shader", "gif")
         this.setAttribute('src', gif[this.getAttribute("id")])
         this.setAttribute('color', "")
